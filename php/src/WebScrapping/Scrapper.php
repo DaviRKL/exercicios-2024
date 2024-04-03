@@ -18,20 +18,23 @@ class Scrapper {
     $aList = $dom->getElementsByTagName("a");
     $cardList = HTMLUtils::findElementsByAttributeAndValue('class', 'paper-card', $aList);
 
-    foreach($cardList as $key => $value) {
-      $title = HTMLUtils::findElementsByClass('class', 'paper-title', $value->childNodes)->nodeValue;
-      $type =  HTMLUtils::findElementsByClass($doc, 'tags mr-sm')->item($key)->textContent;
+    foreach($cardList as $card) {
+      $id = HTMLUtils::findElementsByAttributeAndValue('class', 'volume-info', $card->getElementsByTagName('div'))[0]->textContent;
 
+        // Obter o título
+        $title = HTMLUtils::findElementsByAttributeAndValue('class', 'paper-title', $card->childNodes)[0]->textContent;
+
+        // Obter o tipo
+        $type = HTMLUtils::findElementsByAttributeAndValue('class', 'tags mr-sm', $card->childNodes)[0]->textContent;
+      
       $authors = [];
-      $authorContainers = $xpath->query(".//{$authorContainerTag}", $element);
-
-      foreach ($authorContainers as $authorContainer) {
-        $authorName = $xpath->query(".//{$authorNameTag}", $authorContainer)->item(0)->textContent;
-        $authorInstitution = $xpath->query(".//{$authorInstitutionTag}", $authorContainer)->item(0)->textContent;
-
+      $authorSpans = HTMLUtils::findElementsByAttributeAndValue('class', 'authors', $card->childNodes)[0]->getElementsByTagName('span');
+      foreach ($authorSpans as $span) {
+        $authorName = $span->textContent;
+        $authorInstitution = $span->getAttribute('title');
         $authors[] = new Person($authorName, $authorInstitution);
     }
-    $papers[] = new Paper($title, $type, $authors);
+    $papers[] = new Paper($id, $title, $type, $authors);
     }
     return $papers; 
     // return [
