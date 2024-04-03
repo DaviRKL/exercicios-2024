@@ -25,7 +25,14 @@ class Scrapper {
         $title = HTMLUtils::findElementsByAttributeAndValue('class', 'paper-title', $card->childNodes)[0]->textContent;
 
         // Obter o tipo
-        $type = HTMLUtils::findElementsByAttributeAndValue('class', 'tags mr-sm', $card->childNodes)[0]->textContent;
+        $divElements = $card->getElementsByTagName('div');
+
+        foreach ($divElements as $divElement) {
+            if ($divElement->hasAttribute('class') && $divElement->getAttribute('class') == 'tags mr-sm') {
+                $type = $divElement->textContent;
+                break; // Sai do loop assim que encontrar o elemento desejado
+            }
+        }
       
       $authors = [];
       $authorSpans = HTMLUtils::findElementsByAttributeAndValue('class', 'authors', $card->childNodes)[0]->getElementsByTagName('span');
