@@ -21,7 +21,8 @@ class Main
     $dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
 
     libxml_use_internal_errors(false);
-
+    $data = (new Scrapper())->scrap($dom);
+    
     $xpath = new \DOMXPath($dom);
 
     $paperDiv = $xpath->query('//a[contains(@class, "paper-card p-lg bd-gradient-left")]');
@@ -29,7 +30,18 @@ class Main
 
     foreach ($paperDiv as $paper) {
 
-      $title = $xpath->query('.//h4[@class="my-xs paper-title"]', $paper)->item(0)->textContent;
+      $titleNodeList = $xpath->query('.//h4[@class="my-xs paper-title"]', $paper);
+
+// Verifica se o nó foi encontrado
+if ($titleNodeList->length > 0) {
+    // Acessa o primeiro nó encontrado e obtém o textContent
+    $title = $titleNodeList->item(0)->textContent;
+} else {
+    // Caso o nó não seja encontrado, define um valor padrão para $title
+    $title = "Title not found";
+}
+
+
       $typeNode = $xpath->query('.//div[@class="tags mr-sm"]', $paper)->item(0);
       $type = $typeNode ? $typeNode->textContent : '';
 
@@ -51,10 +63,10 @@ class Main
       'h4.my-xs.paper-title',
       'span.authors span',
       'div.tags.mr-sm',
-      'span.name',
+      'div.tags.flex-row.mr-sm > div.expand',
       'div.tags.flex-row.mr-sm > div.volume-info'
     );
-    // Write your logic to save the output file bellow.
+ 
     print_r($data);
   }
 

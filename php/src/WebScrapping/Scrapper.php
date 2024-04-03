@@ -4,7 +4,7 @@ namespace Chuva\Php\WebScrapping;
 
 use Chuva\Php\WebScrapping\Entity\Paper;
 use Chuva\Php\WebScrapping\Entity\Person;
-
+use Chuva\Php\WebScrapping\Util\HTMLUtils;
 /**
  * Does the scrapping of a webpage.
  */
@@ -13,15 +13,14 @@ class Scrapper {
   /**
    * Loads paper information from the HTML and returns the array with the data.
    */
-  public function scrap(\DOMDocument $dom , string $className, string $elementTag, string $titleTag, string $typeTag, string $authorContainerTag, string $authorNameTag, string $authorInstitutionTag): array {
+  public function scrap(\DOMDocument $dom): array {
     $papers = [];
+    $aList = $dom->getElementsByTagName("a");
+    $cardList = HTMLUtils::findElementsByAttributeAndValue('class', 'paper-card', $aList);
 
-    $xpath = new \DOMXPath($dom);
-    $elements = $xpath->query("//{$elementTag}[contains(@class, '{$className}')]");
-
-    foreach($elements as $element) {
-      $title = $xpath->query(".//{$titleTag}", $element)->item(0)->textContent;
-      $type = $xpath->query(".//{$typeTag}", $element)->item(0)->textContent;
+    foreach($cardList as $key => $value) {
+      $title = HTMLUtils::findElementsByClass('class', 'paper-title', $value->childNodes)->nodeValue;
+      $type =  HTMLUtils::findElementsByClass($doc, 'tags mr-sm')->item($key)->textContent;
 
       $authors = [];
       $authorContainers = $xpath->query(".//{$authorContainerTag}", $element);
