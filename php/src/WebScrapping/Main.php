@@ -9,16 +9,10 @@ use DOMDocument;
 use Chuva\Php\WebScrapping\Scrapper;
 use Chuva\Php\WebScrapping\Entity\Paper;
 
-
-/**
- * Runner for the Webscrapping exercice.
- */
 class Main
 {
 
-  /**
-   * Main runner, instantiates a Scrapper and runs.
-   */
+
   public static function run(): void
   {
     libxml_use_internal_errors(true);
@@ -31,7 +25,7 @@ class Main
     $writer = WriterEntityFactory::createXLSXWriter();
 
     $filePath = './Planilha/papers.xlsx';
-   
+
     $writer->openToFile($filePath);
 
     $headerRow = WriterEntityFactory::createRowFromArray(['ID', 'Title', 'Type', 'Authors']);
@@ -53,14 +47,12 @@ class Main
     }
     $writer->close();
 
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="papers.xlsx"');
-    header('Cache-Control: max-age=0');  
+
     exit;
 
-    
 
-   
+
+
   }
 
 }
