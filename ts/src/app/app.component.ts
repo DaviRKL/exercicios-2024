@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DevChuva';
+  showResume = false;
+  submitted = false;
+
+  toggleResume() {
+    this.showResume = !this.showResume;
+  }
+
+  createTopic() {
+    
+  }
+
+  submitComment() {
+    
+    this.submitted = true;
+  }
 }

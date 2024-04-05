@@ -1,0 +1,44 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0; /* Altura do cabeçalho */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    width: 240px; /* Largura da sidebar */
+  }
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px); /* Altura da tela menos altura do cabeçalho */
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scroll quando necessário */
+  }
+  .tituloNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #FF9800, #FF7043); 
+    padding: 12px; /* Ajuste aqui a quantidade de espaço que você deseja */
+    width: 100%;
+    max-width: 240px; /* Largura máxima do título da sidebar */
+    color: white;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  #titulo{
+    font-size: 30px;
+  }
+  .nav-list {
+    margin-top: 72px; /* Altura do título + padding superior */
+  }
+  .imgNav {
+    width: 240px;
+  }
+  .nav-link{
+    color: #733D11;
+    font-weight: bold;
+    border-bottom: 1px solid #dee2e6;
+  }
