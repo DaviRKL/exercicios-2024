@@ -1,0 +1,100 @@
+.mainContent {
+    padding-left: 240px;
+    color: #733D11;
+   
+}
+
+.bg-orange {
+    background-color: #FFF5F2;
+    height: 68px;
+}
+.titulo-cima{
+    font-weight: normal;
+    font-size: 12px;
+}
+.titulo-meio{
+    font-size: 20px;
+}
+
+.text-light,
+li{
+    
+    color: #733D11;
+    font-size: 12px;
+}
+.list-inline-item {
+    margin-top: -5px; /* Adapte conforme necessário */
+}
+
+.col-md-10 {
+    padding-left: 60px;
+}
+
+.btn {
+    background-color: transparent;
+    color: #733D11;
+    height: 30px; /* Altura do botão */
+    border-radius: 0; /* Define a borda como quadrada */
+    border-width: 1px; 
+    
+}
+
+.welcome-text {
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    text-align: right;
+    
+}
+
+.welcome-dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-text {
+    margin-right: 10px;
+}
+
+
+.welcome-text, .email-text {
+    margin-right: 10px;
+    font-size: 12px;
+}
+.welcome-text{
+    text-align: right;
+}
+.user-details {
+    display: flex;
+    flex-direction: column;
+   
+}
+.user-info {
+    display: flex;
+    flex-direction: column; /* Alterando a direção de exibição para coluna */
+    align-items: center;
+}
+
+.user-details {
+    margin-top: 10px; /* Espaçamento entre a foto e os textos */
+}
+
+.user-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
