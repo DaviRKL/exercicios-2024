@@ -1,26 +1,3 @@
-<!-- 
-  <div class="container">
-    <h1 class="titulo">Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP</h1>
-    <p>Download: <a href="doi">doi</a></p>
-    <p>Como citar este trabalho:</p>
-    <p>Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP</p>
-    <p>Detalhes:</p>
-    <p>Tipo de Apresentação: Pôster</p>
-    <p>Eixo temático: Alimentação e saúde (AS)</p>
-    <p>Palavras-chaves: Alimentos funcionais, alimentação escolar.</p>
-    <div class="authors">
-      <span>Autores:</span>
-      <span>Galileo Galilei</span>
-      <span>Berta Lange de Morretes²</span>
-      <span>Isaac Newton</span>
-      <span>Cesar Lattes</span>
-      <span>Stephen Hawking</span>
-      <span>Universidade Estadual de Campinas</span>
-      <span>2Universidade de São Paulo</span>
-      <span>Instituto Nacional de Pesquisas Espaciais</span>
-      <span>Universidade Federal do Rio de Janeiro</span>
-    </div>
-  </div> -->
 <div class="content-area">
     <div class="section-area">
         <div class="left-section">
@@ -108,32 +85,80 @@
                 quia.
             </p>
         </div>
-
     </div>
     <div class="disc">
         <h1 class="disc-title">Discussões</h1>
-        <h4 class="disc-subtitle text-center"> Compartilhe suas ideias ou
-            dúvidas com os autores!</h4>
-        <div class="disc-icons">
-            <img class="disc-img"
-                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324785940660274/icone1.png?ex=66245af4&is=6611e5f4&hm=55f560898877d101cd461b2a6a16c6889db30f2ebba8a2c016313be6f8f8cf4e&"
-                alt>
-            <img class="disc-img"
-                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324822947139715/icone2.png?ex=66245afd&is=6611e5fd&hm=4d70ecb4daf719e485cf61e2e91d4dad1a96b78c2d401083d4d6f196ccf51a4a&">
-            <img class="disc-img"
-                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324854068875424/icone3.png?ex=66245b05&is=6611e605&hm=9349a498795de3be02c4e77e840c8da8cfaeedf95be3437786e2f723962955c5&"
-                alt>
+        <div class="disc-padrao" *ngIf="inicialText">
+            <h4 class="disc-subtitle text-center"> Compartilhe suas ideias ou
+                dúvidas com os autores!</h4>
+            <div class="disc-icons">
+                <img class="disc-img"
+                    src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324785940660274/icone1.png?ex=66245af4&is=6611e5f4&hm=55f560898877d101cd461b2a6a16c6889db30f2ebba8a2c016313be6f8f8cf4e&"
+                    alt>
+                <img class="disc-img"
+                    src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324822947139715/icone2.png?ex=66245afd&is=6611e5fd&hm=4d70ecb4daf719e485cf61e2e91d4dad1a96b78c2d401083d4d6f196ccf51a4a&">
+                <img class="disc-img"
+                    src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324854068875424/icone3.png?ex=66245b05&is=6611e605&hm=9349a498795de3be02c4e77e840c8da8cfaeedf95be3437786e2f723962955c5&"
+                    alt>
+            </div>
+            <div class="disc-Tarea">
+                <p class="disc-text text-center">Sabia que o maior estímulo no
+                    desenvolvimento científico e cultural é a curiosidade? Deixe
+                    seus questionamentos ou sugestões para o autor!</p>
+            </div>
         </div>
-        <div class="disc-Tarea">
-            <p class="disc-text text-center">Sabia que o maior estímulo no
-                desenvolvimento científico e cultural é a curiosidade? Deixe
-                seus questionamentos ou sugestões para o autor!</p>
+        <div class="disc-criar" *ngIf="criarText">
+            <p class="text-center">Tem uma dúvida ou sugestão? Compartilhe seu
+                feedback com os autores!</p>
+            <form>
+                <div class="mb-3">
+                    <label for="assunto" class="form-label">Assunto</label>
+                    <input type="text" class="form-control" id="assunto"
+                        name="assunto"
+                        placeholder="Defina um tópico sucinto para notificar os autores">
+                </div>
+                <div class="mb-3">
+                    <label for="conteudo" class="form-label">Conteúdo</label>
+                    <textarea class="form-control" id="conteudo" name="conteudo"
+                        rows="5"></textarea>
+                </div>
+                <div class="button-container"  (click)="mostrarConcluido()">
+                    <button class="btn" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="disc-concluir" *ngIf="mostrarConclusao">
+            <h4 class="disc-subtitle text-center">Seu tópico foi enviado com sucesso! :D</h4>
+            <p class="disc-text text-center">Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
+            <a href="#"> <p class="disc-concluir text-center">Descubra outros trabalhos!</p></a>
         </div>
     </div>
-    <div class="criar-topico">
-        <button class=" btn btn-criar"><i class="fa-solid fa-plus"></i> Criar
+    <div class="criar-topico" *ngIf="mostrarBotaoCriar">
+        <button class=" btn btn-criar" (click)="mostrarElementos()"><i
+                class="fa-solid fa-plus"></i> Criar
             tópico</button>
     </div>
+    <div class="pergunta3"  *ngIf="mostrarPergunta">
+        <h3 class="titulo-pergunta"> Assunto da pergunta aparece aqui</h3>
+        <p class="nome-pergunta"> Carlos Henrique Santos</p>
+        <p class="texto-pergunta">Comecinho da pergunta aparece aqui resente
+            relato inscreve-se no campo da análise da dimensão e impacto de
+            processo formativo situado impacto de processo formativo
+            processo...</p>
+        <div class="icons-pergunta">
+            <i class="fa-solid fa-ellipsis-vertical"></i> <i
+                class="fa-solid fa-heart"></i><p class="like"> 1 Like</p><p
+                class="like"> 1 Resposta</p>
+        </div>
+        <div class="blur-effect">
+            <div class="blur-text">
+                <i class="fa-solid fa-check-double"></i>
+                <p class="texto-blur">Aguardando feedback dos autores</p>
+                <a href="#" class="editar-topico">Editar tópico</a>
+            </div>
+        </div>
+    </div>
+   
     <div class="pergunta">
         <h3 class="titulo-pergunta"> Assunto da pergunta aparece aqui</h3>
         <p class="nome-pergunta"> Carlos Henrique Santos</p>

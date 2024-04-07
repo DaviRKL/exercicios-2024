@@ -19,7 +19,7 @@
 .titulo,
 p,
 a,
-.disc-subtitle {
+.disc-subtitle, label {
     color: #ED7839;
     margin-top: 0;
 }
@@ -248,10 +248,33 @@ p {
     margin-left: 10px;
 }
 
+.pergunta3 {
+    position: relative;
+}
+
+.blur-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.blur-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
 .criar-topico,
 .pergunta {
     margin-left: 240px;
-    /* Largura do sidebar (240px) + 40px */
     display: flex;
     flex-direction: column;
     color: #000;
@@ -261,9 +284,9 @@ p {
 
 }
 
-.pergunta, .pergunta2 {
+.pergunta, .pergunta2, .pergunta3 {
     margin-left: 240px;
-    /* Largura do sidebar (240px) + 40px */
+  
     display: flex;
     flex-direction: column;
     color: #000;
@@ -295,3 +318,37 @@ p {
 .icons-pergunta p {
     margin-right: 10px; /* Adiciona um espaçamento entre os elementos */
 }
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #EAF1F2;
+    margin-top: -17px;
+  }
+  
+  .button-container button {
+    margin-left: auto;
+    height: 100%;
+    width: 20%;
+    background-color: #ED7839;
+    color: white;
+  }
+  .disc-criar{
+    padding: 20px;
+  }
+  label{
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .disc-concluir{
+        
+        padding: 10px;
+        padding-bottom: 40px;
+  }
+  
+  .fa-check-double{
+    color: #707070;
+  }
+  .editar-topico{
+    font-size: 14px;
+  }

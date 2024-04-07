@@ -7,15 +7,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentAreaComponent implements OnInit {
 
-  expandedText: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  inicialText: boolean = true;
+  expandedText: boolean = false;
+  criarText: boolean = false;
+  mostrarBotaoCriar: boolean = true;
+  mostrarConclusao: boolean = false;
+  mostrarPergunta: boolean = false;
 
   expandirTexto() {
     this.expandedText = true;
   }
 
+  mostrarElementos() {
+    this. inicialText = false;
+    this.criarText = !this.criarText;
+    this.mostrarBotaoCriar = !this.mostrarBotaoCriar;
+    this.mostrarConclusao = false; 
+    this.mostrarPergunta = false;
+  }
+  mostrarConcluido() {
+    this.criarText = !this.criarText;
+    this.mostrarConclusao = !this.mostrarConclusao; 
+    this.mostrarBotaoCriar = !this.mostrarBotaoCriar;
+    this.mostrarPergunta = true;
+    }
+
+
 }
+
