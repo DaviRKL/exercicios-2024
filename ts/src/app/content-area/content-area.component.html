@@ -35,9 +35,10 @@
                     Download</button>
                 <button class="btn btn-orange-star"><i
                         class="fa-solid fa-star white-icon"></i></button>
-                <button class="btn btn-orange-doi"><img class="doi-img" src="https://cdn.discordapp.com/attachments/1225887439864725546/1226289707554701322/doi-icon-2048x2048-tozwf629.png?ex=66243a49&is=6611c549&hm=4fa2d0d047cc2676a6004b4ef78ccae555d203041bd5e6f6ded96c302d022327&"></button>
+                <button class="btn btn-orange-doi"><img class="doi-img"
+                        src="https://cdn.discordapp.com/attachments/1225887439864725546/1226289707554701322/doi-icon-2048x2048-tozwf629.png?ex=66243a49&is=6611c549&hm=4fa2d0d047cc2676a6004b4ef78ccae555d203041bd5e6f6ded96c302d022327&"></button>
             </div>
-            <P class="d-block">COMO CITAR ESTE TRABALHO?</P>
+            <p class="d-block">COMO CITAR ESTE TRABALHO?</p>
         </div>
     </div>
     <div class="section-area">
@@ -75,39 +76,88 @@
     </div>
     <div class="resumo">
         <h1 class="resumo-title"> Resumo</h1>
-        <p class="resumo-text">Lorem ipsum dolor sit amet. Et facere libero sed beatae alias et minima quibusdam sed dolorum obcaecati ab voluptatibus explicabo et aspernatur consectetur ut porro commodi. Non reiciendis adipisci aut corporis voluptatem est totam sapiente. Id nesciunt eaque nam suscipit dolorem non eius asperiores ut reprehenderit voluptas!
-            Eos quis dignissimos et officia voluptatem rem maxime repudiandae est provident quia ut dolorem voluptatem 33 eveniet corrupti rem facilis excepturi. Vel recusandae galisum ad explicabo officia sed recusandae porro qui iure temporibus non dolores ullam.
-            Eos ipsa consequatur et officiis rerum et aperiam iste eum rerum perspiciatis ea autem voluptates est perspiciatis corrupti? Et tempore fugiat aut modi saepe vel suscipit voluptatibus est quidem dolores. Ut exercitationem galisum qui quos perspiciatis id Quis modi... <a href="#">Ver mais</a></p>
+        <p *ngIf="!expandedText" id="textoCurto" class="resumo-text">Lorem ipsum
+            dolor sit amet. Et rerum fugiat est tempora corporis est beatae
+            sequi sit consequatur ratione qui recusandae harum. Quo illum vitae
+            ab sapiente pariatur rem aspernatur harum eum eligendi facere et
+            magni aliquid eos amet... <a class="btn btn-link"
+                (click)="expandirTexto()">Ver mais</a></p>
+        <div *ngIf="expandedText">
+            <p class="resumo-text">
+                Lorem ipsum dolor sit amet. Et rerum fugiat est tempora corporis
+                est beatae sequi sit consequatur ratione qui recusandae harum.
+                Quo illum vitae ab sapiente pariatur rem aspernatur harum eum
+                eligendi facere et magni aliquid eos amet consequuntur!
+
+                Eos reprehenderit quae ab voluptas nobis ut voluptas esse. Ut
+                quam eligendi 33 alias excepturi et velit quae qui voluptatem
+                Quis non officiis maxime rem doloribus earum cum illo quibusdam.
+                Eos incidunt quae in quaerat enim sit molestiae quam sit amet
+                odit 33 totam quisquam ut ipsam quidem. Ab doloribus error ea
+                perspiciatis molestiae 33 reprehenderit blanditiis ut debitis
+                illum qui fuga doloremque quo facilis sapiente et molestiae
+                nisi!
+
+                Et facilis itaque ea dignissimos vero hic explicabo quas et quia
+                dolor id rerum quod. Ut obcaecati animi nam voluptate aliquam 33
+                corrupti sapiente eum consequuntur omnis et earum minima aut
+                aspernatur consectetur? Ut fugiat dolorem cum quisquam
+                repudiandae ut perspiciatis fugiat sit autem sunt et consequatur
+                esse vel perferendis vitae. Et internos omnis sit voluptate
+                aliquam et perspiciatis sint et vero molestiae et laudantium
+                quia.
+            </p>
+        </div>
+
     </div>
     <div class="disc">
         <h1 class="disc-title">Discussões</h1>
-        <h4 class="disc-subtitle text-center"> Compartilhe suas ideias ou dúvidas com os autores!</h4>
+        <h4 class="disc-subtitle text-center"> Compartilhe suas ideias ou
+            dúvidas com os autores!</h4>
         <div class="disc-icons">
-            <img class="disc-img" src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324785940660274/icone1.png?ex=66245af4&is=6611e5f4&hm=55f560898877d101cd461b2a6a16c6889db30f2ebba8a2c016313be6f8f8cf4e&" alt="">
-            <img class="disc-img" src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324822947139715/icone2.png?ex=66245afd&is=6611e5fd&hm=4d70ecb4daf719e485cf61e2e91d4dad1a96b78c2d401083d4d6f196ccf51a4a&">
-            <img class="disc-img" src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324854068875424/icone3.png?ex=66245b05&is=6611e605&hm=9349a498795de3be02c4e77e840c8da8cfaeedf95be3437786e2f723962955c5&" alt="">
+            <img class="disc-img"
+                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324785940660274/icone1.png?ex=66245af4&is=6611e5f4&hm=55f560898877d101cd461b2a6a16c6889db30f2ebba8a2c016313be6f8f8cf4e&"
+                alt>
+            <img class="disc-img"
+                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324822947139715/icone2.png?ex=66245afd&is=6611e5fd&hm=4d70ecb4daf719e485cf61e2e91d4dad1a96b78c2d401083d4d6f196ccf51a4a&">
+            <img class="disc-img"
+                src="https://cdn.discordapp.com/attachments/1225887439864725546/1226324854068875424/icone3.png?ex=66245b05&is=6611e605&hm=9349a498795de3be02c4e77e840c8da8cfaeedf95be3437786e2f723962955c5&"
+                alt>
         </div>
         <div class="disc-Tarea">
-            <p class="disc-text text-center">Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
+            <p class="disc-text text-center">Sabia que o maior estímulo no
+                desenvolvimento científico e cultural é a curiosidade? Deixe
+                seus questionamentos ou sugestões para o autor!</p>
         </div>
     </div>
     <div class="criar-topico">
-        <button class=" btn btn-criar"><i class="fa-solid fa-plus"></i> Criar tópico</button>
+        <button class=" btn btn-criar"><i class="fa-solid fa-plus"></i> Criar
+            tópico</button>
     </div>
     <div class="pergunta">
         <h3 class="titulo-pergunta"> Assunto da pergunta aparece aqui</h3>
         <p class="nome-pergunta"> Carlos Henrique Santos</p>
-        <p class="texto-pergunta">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+        <p class="texto-pergunta">Comecinho da pergunta aparece aqui resente
+            relato inscreve-se no campo da análise da dimensão e impacto de
+            processo formativo situado impacto de processo formativo
+            processo...</p>
         <div class="icons-pergunta">
-            <i class="fa-solid fa-ellipsis-vertical"></i> <i class="fa-solid fa-heart"></i><p class="like"> 1 Like</p><p class="like"> 1 Resposta</p>
+            <i class="fa-solid fa-ellipsis-vertical"></i> <i
+                class="fa-solid fa-heart"></i><p class="like"> 1 Like</p><p
+                class="like"> 1 Resposta</p>
         </div>
     </div>
-    <div class="pergunta2">
+    <div class="pergunta">
         <h3 class="titulo-pergunta"> Assunto da pergunta aparece aqui</h3>
         <p class="nome-pergunta"> Carlos Henrique Santos</p>
-        <p class="texto-pergunta">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+        <p class="texto-pergunta">Comecinho da pergunta aparece aqui resente
+            relato inscreve-se no campo da análise da dimensão e impacto de
+            processo formativo situado impacto de processo formativo
+            processo...</p>
         <div class="icons-pergunta">
-            <i class="fa-solid fa-ellipsis-vertical"></i> <i class="fa-solid fa-heart"></i><p class="like"> 1 Like</p><p class="like"> 1 Resposta</p>
+            <i class="fa-solid fa-ellipsis-vertical"></i> <i
+                class="fa-solid fa-heart"></i><p class="like"> 1 Like</p><p
+                class="like"> 1 Resposta</p>
         </div>
     </div>
 </div>

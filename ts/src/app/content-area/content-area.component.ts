@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentAreaComponent implements OnInit {
 
+  expandedText: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  expandirTexto() {
+    this.expandedText = true;
   }
 
 }

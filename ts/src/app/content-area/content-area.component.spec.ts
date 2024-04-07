@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Component } from '@angular/core';
 import { ContentAreaComponent } from './content-area.component';
 
 describe('ContentAreaComponent', () => {
@@ -21,3 +21,5 @@ describe('ContentAreaComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
