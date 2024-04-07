@@ -5,7 +5,7 @@
 }
 
 .bg-orange {
-    background-color: #FFF5F2;
+    background-color: #FDF1EB;
     height: 68px;
 }
 .titulo-cima{
@@ -19,11 +19,11 @@
 .text-light,
 li{
     
-    color: #733D11;
+    color: #725C5C;
     font-size: 12px;
 }
 .list-inline-item {
-    margin-top: -5px; /* Adapte conforme necessário */
+    margin-top: -5px; 
 }
 
 .col-md-10 {
@@ -32,10 +32,11 @@ li{
 
 .btn {
     background-color: transparent;
-    color: #733D11;
-    height: 30px; /* Altura do botão */
-    border-radius: 0; /* Define a borda como quadrada */
+    color: #725C5C;
+    height: 30px; 
+    border-radius: 0; 
     border-width: 1px; 
+    
     
 }
 
@@ -49,7 +50,7 @@ li{
 }
 
 .welcome-dropdown {
-    position: fixed;
+   position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
@@ -76,19 +77,19 @@ li{
 }
 .user-info {
     display: flex;
-    flex-direction: column; /* Alterando a direção de exibição para coluna */
+    flex-direction: column; 
     align-items: center;
 }
 
 .user-details {
-    margin-top: 10px; /* Espaçamento entre a foto e os textos */
+    margin-top: 10px; 
 }
 
 .user-photo {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png');
     background-size: cover;
     background-position: center;
 }

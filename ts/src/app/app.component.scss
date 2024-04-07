@@ -56,3 +56,18 @@
         border-radius: 5px;
        
       }
+
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Define a altura do contêiner para ocupar toda a altura da janela do navegador */
+    }
+    
+    app-header, app-sidebar, app-content-area {
+        flex: 0 0 auto; /* Assegura que os componentes do cabeçalho e da barra lateral mantenham sua altura original */
+    }
+    
+    app-content-area {
+        flex: 1; /* Isso faz com que o componente de área de conteúdo ocupe todo o espaço restante */
+    }
+    
