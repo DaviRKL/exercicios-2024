@@ -1,0 +1,40 @@
+footer {
+    border-top: 1px solid #ccc;
+    margin-left: 240px;
+    padding: 20px 0;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .galoa-logo{
+    height: 80px;
+    width: 180px;
+  }
+  
+  .logo {
+    margin-right: 20px; /* Espaçamento entre a logo e o botão */
+   
+  }
+  
+  .content {
+   /* Ocupa o espaço disponível */
+  }
+  
+  button {
+    background-color: #6A0DAD;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 180px;
+    height: 40px;
+  }
+  .logo-button{
+    
+    flex-direction: column;
+  }
+  
