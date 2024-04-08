@@ -36,6 +36,7 @@ export class ContentAreaComponent implements OnInit {
     this.mostrarBotaoCriar = !this.mostrarBotaoCriar;
     this.mostrarPergunta = true;
     }
+   
 
 
 }
