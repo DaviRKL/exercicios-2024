@@ -1,9 +1,6 @@
 name: ts
 
-on:
-  push:
-    paths:
-      - 'ts/**'
+on: [ push, pull_request ]
 
 jobs:
   build:
