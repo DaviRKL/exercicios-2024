@@ -1,9 +1,6 @@
 name: PHP
 
-on:
-  push:
-    paths:
-      - 'php/**'
+on: [ push, pull_request ]
 
 jobs:
   Psalm:
