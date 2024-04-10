@@ -1,10 +1,18 @@
 <?php
+
 namespace Chuva\Php\WebScrapping;
 
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 
 class SpreadsheetCreator
 {
+    /**
+     * Cria uma planilha utilizando os dados passados e salva ela em uma pasta especificada na classe Main.
+     * 
+     * @param array $data    Os dados a serem incluidos na planilha.
+     * @param string $filePath A pasta onde a planilha será salva.
+     * @return void
+     */
     public static function createSpreadsheet(array $data, string $filePath): void
     {
         $writer = WriterEntityFactory::createXLSXWriter();
