@@ -4,13 +4,18 @@ namespace Chuva\Php\WebScrapping;
 
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 
+/**
+ * Class SpreadsheetCreator
+ *
+ * This class provides functionality to create a spreadsheet from given data.
+ */
 class SpreadsheetCreator
 {
     /**
-     * Cria uma planilha utilizando os dados passados e salva ela em uma pasta especificada na classe Main.
-     * 
-     * @param array $data    Os dados a serem incluidos na planilha.
-     * @param string $filePath A pasta onde a planilha será salva.
+     * Creates a spreadsheet from provided data and saves it to the specified file path.
+     *
+     * @param array  $data     The data to be included in the spreadsheet.
+     * @param string $filePath The file path where the spreadsheet will be saved.
      * @return void
      */
     public static function createSpreadsheet(array $data, string $filePath): void
