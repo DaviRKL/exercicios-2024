@@ -5,7 +5,6 @@ on:
     paths:
       - 'ts/**'
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,13 +23,22 @@ jobs:
 
     - name: npm install
       run: |
-        
-        npm install --prefix ts;
+        cd ts
+        npm install
 
-    - name: run test
+    - name: Start Angular server
       run: |
-        
-        npm run test --prefix ts
+        cd ts
+        ng serve --host 0.0.0.0 --disable-host-check --port 4200 &
+
+    - name: Wait for server to start
+      run: |
+        timeout 60s sh -c 'until nc -z localhost 4200; do sleep 1; done'
+
+    - name: Run tests
+      run: |
+        cd ts
+        npm run cypress:run-base
 
     - name: Stores screenshots
       uses: actions/upload-artifact@v3
