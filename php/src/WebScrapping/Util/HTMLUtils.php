@@ -5,17 +5,18 @@ namespace Chuva\Php\WebScrapping\Util;
 /**
  * Class HTMLUtils provides utility functions for HTML parsing.
  */
-class HTMLUtils {
-
+class HTMLUtils
+{
     /**
      * Finds elements by attribute and value.
      *
-     * @param string $attribute The attribute to search for.
-     * @param string $value The value of the attribute.
-     * @param array $tagList The list of HTML tags to search in.
+     * @param  string $attribute The attribute to search for.
+     * @param  string $value     The value of the attribute.
+     * @param  array  $tagList   The list of HTML tags to search in.
      * @return array The elements found.
      */
-    public static function findElementsByAttributeAndValue($attribute, $value, $tagList) {
+    public static function findElementsByAttributeAndValue($attribute, $value, $tagList)
+    {
         $elementsFound = [];
 
         foreach ($tagList as $tag) {
@@ -37,12 +38,13 @@ class HTMLUtils {
     /**
      * Finds an element by attribute and value.
      *
-     * @param string $attribute The attribute to search for.
-     * @param string $value The value of the attribute.
-     * @param array $tagList The list of HTML tags to search in.
+     * @param  string $attribute The attribute to search for.
+     * @param  string $value     The value of the attribute.
+     * @param  array  $tagList   The list of HTML tags to search in.
      * @return mixed|null The element found, or null if not found.
      */
-    public static function findElementByAttributeAndValue($attribute, $value, $tagList) {
+    public static function findElementByAttributeAndValue($attribute, $value, $tagList)
+    {
         foreach ($tagList as $tag) {
             $tagAttributeValue = $tag->getAttribute($attribute);
 
@@ -62,11 +64,12 @@ class HTMLUtils {
     /**
      * Finds an element by class.
      *
-     * @param \DOMDocument $dom The DOM document to search in.
-     * @param string $className The class name to search for.
+     * @param  \DOMDocument $dom       The DOM document to search in.
+     * @param  string       $className The class name to search for.
      * @return \DOMNodeList The elements found.
      */
-    public static function findElementByClass($dom, $className) {
+    public static function findElementByClass($dom, $className)
+    {
         $xPath = new \DOMXpath($dom);
         $elementsFound = $xPath->query("//*[@class='$className']");
         return $elementsFound;

@@ -17,7 +17,8 @@
         "openspout/openspout": "^3.4",
         "psalm/phar": "^4.7",
         "drupal/coder": "8.3.x-dev",
-        "box/spout": "^3.3"
+        "box/spout": "^3.3",
+        "squizlabs/php_codesniffer": "^3.7.1"
     },
     "config": {
         "allow-plugins": {

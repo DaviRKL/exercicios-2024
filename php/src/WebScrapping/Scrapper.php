@@ -16,7 +16,7 @@ class Scrapper
     /**
      * Scrapes data from a DOMDocument and returns an array of Paper objects.
      *
-     * @param \DOMDocument $dom The DOMDocument to be scraped.
+     * @param  \DOMDocument $dom The DOMDocument to be scraped.
      * @return array An array of Paper objects.
      */
     public function scrap(\DOMDocument $dom): array
