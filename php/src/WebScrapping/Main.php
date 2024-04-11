@@ -2,8 +2,6 @@
 
 namespace Chuva\Php\WebScrapping;
 
-
-
 /**
  * Main class for running the web scraping process.
  */
