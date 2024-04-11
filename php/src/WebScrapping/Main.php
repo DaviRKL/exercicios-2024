@@ -2,8 +2,7 @@
 
 namespace Chuva\Php\WebScrapping;
 
-use Chuva\Php\WebScrapping\Scrapper;
-use Chuva\Php\WebScrapping\SpreadsheetCreator;
+
 
 /**
  * Main class for running the web scraping process.
