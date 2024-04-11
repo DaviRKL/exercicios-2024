@@ -24,13 +24,13 @@ jobs:
 
     - name: npm install
       run: |
-        cd ts;
-        npm install;
+        
+        npm install --prefix ts;
 
     - name: run test
       run: |
-        cd ts;
-        npm run test
+        
+        npm run test --prefix ts
 
     - name: Stores screenshots
       uses: actions/upload-artifact@v3
