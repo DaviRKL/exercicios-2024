@@ -23,19 +23,11 @@ jobs:
 
     - name: npm install
       run: |
-        cd ts
-        npm install
+        npm install --prefix ts;
 
-    - name: Start Angular server
+    - name: run test
       run: |
-        cd ts
-        ng serve --host 0.0.0.0 --disable-host-check --port 4200 > /dev/null 2>&1 &
-        until $(curl --output /dev/null --silent --head --fail http://localhost:4200); do sleep 1; done
-
-    - name: Run tests
-      run: |
-        cd ts
-        npm run cypress:run-base
+        npm run test --prefix ts
 
     - name: Stores screenshots
       uses: actions/upload-artifact@v3
