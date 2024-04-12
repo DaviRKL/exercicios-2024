@@ -27,6 +27,7 @@ jobs:
 
     - name: run test
       run: |
+        pwd
         npm run test --prefix ts
 
     - name: Stores screenshots
