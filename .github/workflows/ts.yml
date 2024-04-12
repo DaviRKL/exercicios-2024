@@ -1,6 +1,7 @@
 name: ts
 
 on:
+  workflow_dispatch: 
   push:
     paths:
       - 'ts/**'
