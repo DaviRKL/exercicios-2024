@@ -29,11 +29,8 @@ jobs:
     - name: Start Angular server
       run: |
         cd ts
-        ng serve --host 0.0.0.0 --disable-host-check --port 4200 &
-
-    - name: Wait for server to start
-      run: |
-        timeout 60s sh -c 'until nc -z localhost 4200; do sleep 1; done'
+        ng serve --host 0.0.0.0 --disable-host-check --port 4200 > /dev/null 2>&1 &
+        until $(curl --output /dev/null --silent --head --fail http://localhost:4200); do sleep 1; done
 
     - name: Run tests
       run: |
