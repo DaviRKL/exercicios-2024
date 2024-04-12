@@ -30,7 +30,7 @@ jobs:
     - name: run test
       run: |
         cd ts;
-        npm run test 
+        npm run test;
 
     - name: Stores screenshots
       uses: actions/upload-artifact@v3
