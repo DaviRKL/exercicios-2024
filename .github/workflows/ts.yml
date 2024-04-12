@@ -22,10 +22,10 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: npm install
+    - name: npm install 
       run: |
         cd ts;
-        npm install;
+        npm install --force;
 
     - name: run test
       run: |
