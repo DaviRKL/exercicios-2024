@@ -23,12 +23,13 @@ jobs:
 
     - name: npm install
       run: |
-        npm install --prefix ts;
+        cd ts;
+        npm install;
 
     - name: run test
       run: |
-        pwd
-        npm run test --prefix ts
+        cd ts;
+        npm run test 
 
     - name: Stores screenshots
       uses: actions/upload-artifact@v3
